@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <package >
   <metadata>
-    <id>Rawr.FluentConsole</id>
+    <id>FluentConsole.Library</id>
     <version>$version$</version>
-    <title>$title$</title>
+    <title>Fluent Console Library</title>
     <authors>$author$</authors>
     <owners>$author$</owners>
     <licenseUrl>https://github.com/refactorsaurusrex/FluentConsole/blob/master/license.md</licenseUrl>
