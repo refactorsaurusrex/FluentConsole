@@ -11,8 +11,8 @@
     <iconUrl>https://raw.githubusercontent.com/refactorsaurusrex/FluentConsole/master/Images/FluentConsole.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
-    <releaseNotes>Summary of changes made in this release of the package.</releaseNotes>
+    <releaseNotes>Initial release.</releaseNotes>
     <copyright>Copyright 2016 Nick Spreitzer</copyright>
-    <tags>C# Console</tags>
+    <tags>c# console fluent library</tags>
   </metadata>
 </package>
