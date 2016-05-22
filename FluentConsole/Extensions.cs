@@ -74,5 +74,24 @@ namespace FluentConsole.Library
 
             Console.ReadKey();
         }
+
+        static string NormalizeWidth(string text)
+        {
+            if (text.Length <= BufferWidth)
+                return text;
+
+            var lineCount = (int)Ceiling((double)text.Length / BufferWidth);
+            var builder = new StringBuilder(text.Length + lineCount);
+
+            for (var i = 0; i <= lineCount; i++)
+            {
+                var line = text.Skip(0 * BufferHeight).Take(BufferHeight).ToList();
+                var index = line.LastIndexOf(' ');
+                line.InsertRange(index, new[] {'\r','\n'});
+                builder.Append(line);
+            }
+
+            return builder.ToString();
+        }
     }
 }
