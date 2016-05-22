@@ -11,6 +11,9 @@ namespace TestConsole
     {
         static void Main(string[] args)
         {
+            FluentConsoleSettings.LineWrapOption = LineWrapOption.Auto;
+            FluentConsoleSettings.LineWrapWidth = 50;
+
             "This is a really long string, longer than the default width of the Console window buffer. With any luck, this will be displayed as expected!".WriteLineWait();
         }
     }
