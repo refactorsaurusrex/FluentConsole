@@ -1,6 +1,6 @@
 # Fluent Console Library
 
-[![Build status](https://ci.appveyor.com/api/projects/status/d1g6pl6x4uuyf9hl?svg=true)](https://ci.appveyor.com/project/refactorsaurusrex/fluentconsole)
+[![Build status](https://ci.appveyor.com/api/projects/status/d1g6pl6x4uuyf9hl/branch/master?svg=true)](https://ci.appveyor.com/project/refactorsaurusrex/fluentconsole/branch/master)
 
 Fluent Console Library is a single class of extension methods that simplify writing messages to the console window.
 
