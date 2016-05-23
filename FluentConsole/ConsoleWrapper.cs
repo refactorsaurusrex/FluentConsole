@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static System.Console;
 using static System.Math;
 
 namespace FluentConsole.Library
 {
-    class FluentWriter
+    class ConsoleWrapper
     {
         public static void NewLine()
         {
@@ -36,21 +35,54 @@ namespace FluentConsole.Library
             Console.WriteLine(wrappedText);
         }
 
+        public static int BufferWidth
+        {
+            get
+            {
+                try
+                {
+                    return Console.BufferWidth;
+                }
+                catch (Exception)
+                {
+                    return 80;
+                }
+            }
+
+            set { Console.BufferWidth = value; }
+        }
+
+        public static ConsoleKeyInfo ReadKey()
+        {
+            return Console.ReadKey();
+        }
+
+        public static ConsoleColor ForegroundColor
+        {
+            get { return Console.ForegroundColor; }
+            set { Console.ForegroundColor = value; }
+        }
+
+        public static void ResetColor()
+        {
+            Console.ResetColor();
+        }
+
         static string LineWrap(string text, int width)
         {
-            var lineCount = (int)Ceiling((double)text.Length / width);
             var builder = new StringBuilder();
             var offset = 0;
+            var lineIndex = 0;
 
-            for (var i = 0; i < lineCount; i++)
+            while (true)
             {
-                var skip = i * width - offset;
+                var skip = lineIndex++ * width - offset;
                 var line = text.Skip(skip).Take(width).ToList();
                 
                 if (line.Count < width)
                 {
                     builder.Append(line.ToArray());
-                    continue; // continue vs break here: totally arbitrary because either way we're on the final iteration
+                    break;
                 }
 
                 var index = line.LastIndexOf(' ');

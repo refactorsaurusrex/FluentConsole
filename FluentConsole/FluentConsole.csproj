@@ -45,7 +45,7 @@
     <Compile Include="FluentConsoleSettings.cs" />
     <Compile Include="LineWrapOption.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="FluentWriter.cs" />
+    <Compile Include="ConsoleWrapper.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

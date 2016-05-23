@@ -6,10 +6,11 @@ namespace FluentConsole.Library
     {
         static FluentConsoleSettings()
         {
-            LineWrapWidth = Console.BufferWidth;
+            LineWrapWidth = ConsoleWrapper.BufferWidth;
         }
 
         public static LineWrapOption LineWrapOption { get; set; }
+
         public static int LineWrapWidth { get; set; }
     }
 }
