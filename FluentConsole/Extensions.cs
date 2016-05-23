@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using static System.Console;
-using static System.Math;
 
 namespace FluentConsole.Library
 {
@@ -20,10 +19,10 @@ namespace FluentConsole.Library
         /// <param name="lineBreaks">The number of *additional* line breaks to include after the specified value.</param>
         public static void WriteLine(this object value, int lineBreaks = 0)
         {
-            Console.WriteLine(value);
+            FluentWriter.WriteLine(value);
 
             for (var i = 1; i < lineBreaks; i++)
-                Console.WriteLine();
+                FluentWriter.NewLine();
         }
 
         /// <summary>
@@ -34,10 +33,10 @@ namespace FluentConsole.Library
         /// <returns>The key entered while waiting.</returns>
         public static ConsoleKeyInfo WriteLineWait(this object value, int lineBreaks = 0)
         {
-            Console.WriteLine(value);
+            FluentWriter.WriteLine(value);
 
             for (var i = 1; i < lineBreaks; i++)
-                Console.WriteLine();
+                FluentWriter.NewLine();
 
             return ReadKey();
         }
@@ -51,11 +50,11 @@ namespace FluentConsole.Library
         public static void WriteLine(this object value, ConsoleColor color, int lineBreaks = 0)
         {
             ForegroundColor = color;
-            Console.WriteLine(value);
+            FluentWriter.WriteLine(value);
             ResetColor();
 
             for (var i = 1; i < lineBreaks; i++)
-                Console.WriteLine();
+                FluentWriter.NewLine();
         }
 
         /// <summary>
@@ -68,32 +67,13 @@ namespace FluentConsole.Library
         public static void WriteLineWait(this object value, ConsoleColor color, int lineBreaks = 0)
         {
             ForegroundColor = color;
-            Console.WriteLine(value);
+            FluentWriter.WriteLine(value);
             ResetColor();
 
             for (var i = 1; i < lineBreaks; i++)
-                Console.WriteLine();
+                FluentWriter.NewLine();
 
             ReadKey();
-        }
-
-        static string NormalizeWidth(string text)
-        {
-            if (text.Length <= BufferWidth)
-                return text;
-
-            var lineCount = (int)Ceiling((double)text.Length / BufferWidth);
-            var builder = new StringBuilder(text.Length + lineCount);
-
-            for (var i = 0; i <= lineCount; i++)
-            {
-                var line = text.Skip(0 * BufferHeight).Take(BufferHeight).ToList();
-                var index = line.LastIndexOf(' ');
-                line.InsertRange(index, new[] {'\r','\n'});
-                builder.Append(line);
-            }
-
-            return builder.ToString();
         }
     }
 }
