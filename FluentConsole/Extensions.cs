@@ -21,7 +21,7 @@ namespace FluentConsole.Library
         {
             FluentWriter.WriteLine(value);
 
-            for (var i = 1; i < lineBreaks; i++)
+            for (var i = 0; i < lineBreaks; i++)
                 FluentWriter.NewLine();
         }
 
@@ -35,7 +35,7 @@ namespace FluentConsole.Library
         {
             FluentWriter.WriteLine(value);
 
-            for (var i = 1; i < lineBreaks; i++)
+            for (var i = 0; i < lineBreaks; i++)
                 FluentWriter.NewLine();
 
             return ReadKey();
@@ -53,7 +53,7 @@ namespace FluentConsole.Library
             FluentWriter.WriteLine(value);
             ResetColor();
 
-            for (var i = 1; i < lineBreaks; i++)
+            for (var i = 0; i < lineBreaks; i++)
                 FluentWriter.NewLine();
         }
 
@@ -70,7 +70,7 @@ namespace FluentConsole.Library
             FluentWriter.WriteLine(value);
             ResetColor();
 
-            for (var i = 1; i < lineBreaks; i++)
+            for (var i = 0; i < lineBreaks; i++)
                 FluentWriter.NewLine();
 
             ReadKey();
