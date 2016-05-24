@@ -21,6 +21,12 @@ namespace TestConsole
 
             "This is a really long string, longer than the default width of the Console window buffer, followed by two line breaks. With any luck, this will be displayed as expected!".WriteLine(2);
 
+            FluentConsoleSettings.LineWrapOption = LineWrapOption.Off;
+
+            "This is a really long string, longer than the default width of the Console window buffer, followed by two line breaks. With any luck, this will be displayed as expected!".WriteLine(2);
+
+            FluentConsoleSettings.LineWrapOption = LineWrapOption.Auto;
+
             "This is a much shorter string, with zero line breaks.".WriteLine();
 
             "This is a green string with one line break.".WriteLine(ConsoleColor.Green, 1);
