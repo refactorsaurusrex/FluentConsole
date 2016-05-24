@@ -28,6 +28,19 @@ Personally, I find it more sensible and less tedious to write it like this:
 
 Just add `using FluentConsole.Library;` to your namespace import statements and you're ready to go!
 
+## Automatic Line Wrapping
+By default, FluentConsole will automatically wrap long lines of text to fit readably in the console window. This is done by strategically inserting line breaks in between words at end of each line. The default line length is the current width of the console window, but this can be changed to any width you desire or disabled completely, if you choose. Reference the `FluentConsoleSettings` type for more information.
+
+**Taken from the ConsoleTest Project**
+1. Text wrapped with a manual width of 25.
+2. Text wrapped with automatic width of 80.
+3. Text with line wrapping turned off.
+4. Normal line of text.
+5. Normal line of text, with green font.
+6. Normal line of text, with red font.
+
+![Line Wrapping](https://raw.githubusercontent.com/refactorsaurusrex/FluentConsole/master/Images/LineWrapping.png)
+
 ## Installation
 Updates to this repo are continuously packaged and [deployed to nuget](https://www.nuget.org/packages/FluentConsole.Library/), so whatever code you see here is already available in the wild. Just open the Nuget package manager in Visual Studio and search for 'fluentconsole'. **Note:** There is another, similarly named package available, so make sure you're installing the one you want.
 
