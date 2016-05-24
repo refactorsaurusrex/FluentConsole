@@ -32,6 +32,7 @@ Just add `using FluentConsole.Library;` to your namespace import statements and 
 By default, FluentConsole will automatically wrap long lines of text to fit readably in the console window. This is done by strategically inserting line breaks in between words at end of each line. The default line length is the current width of the console window, but this can be changed to any width you desire or disabled completely, if you choose. Reference the `FluentConsoleSettings` type for more information.
 
 **Taken from the ConsoleTest Project**
+
 1. Text wrapped with a manual width of 25.
 2. Text wrapped with automatic width of 80.
 3. Text with line wrapping turned off.
