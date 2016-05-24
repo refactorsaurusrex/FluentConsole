@@ -38,7 +38,9 @@ namespace FluentConsole.Library
             for (var i = 0; i < lineBreaks; i++)
                 NewLine();
 
-            return ReadKey();
+            var key = ReadKey();
+            NewLine();
+            return key;
         }
 
         /// <summary>
@@ -73,7 +75,9 @@ namespace FluentConsole.Library
             for (var i = 0; i < lineBreaks; i++)
                 NewLine();
 
-            ReadKey();
+            var key = ReadKey();
+            NewLine();
+            return key;
         }
     }
 }
