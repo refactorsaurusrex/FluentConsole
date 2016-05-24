@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static FluentConsole.Library.ConsoleWrapper;
 
 namespace FluentConsole.Library
 {
@@ -18,10 +19,10 @@ namespace FluentConsole.Library
         /// <param name="lineBreaks">The number of *additional* line breaks to include after the specified value.</param>
         public static void WriteLine(this object value, int lineBreaks = 0)
         {
-            Console.WriteLine(value);
+            ConsoleWrapper.WriteLine(value);
 
-            for (var i = 1; i < lineBreaks; i++)
-                Console.WriteLine();
+            for (var i = 0; i < lineBreaks; i++)
+                NewLine();
         }
 
         /// <summary>
@@ -32,12 +33,12 @@ namespace FluentConsole.Library
         /// <returns>The key entered while waiting.</returns>
         public static ConsoleKeyInfo WriteLineWait(this object value, int lineBreaks = 0)
         {
-            Console.WriteLine(value);
+            ConsoleWrapper.WriteLine(value);
 
-            for (var i = 1; i < lineBreaks; i++)
-                Console.WriteLine();
+            for (var i = 0; i < lineBreaks; i++)
+                NewLine();
 
-            return Console.ReadKey();
+            return ReadKey();
         }
 
         /// <summary>
@@ -48,12 +49,12 @@ namespace FluentConsole.Library
         /// <param name="lineBreaks">The number of *additional* line breaks to include after the specified value.</param>
         public static void WriteLine(this object value, ConsoleColor color, int lineBreaks = 0)
         {
-            Console.ForegroundColor = color;
-            Console.WriteLine(value);
-            Console.ResetColor();
+            ForegroundColor = color;
+            ConsoleWrapper.WriteLine(value);
+            ResetColor();
 
-            for (var i = 1; i < lineBreaks; i++)
-                Console.WriteLine();
+            for (var i = 0; i < lineBreaks; i++)
+                NewLine();
         }
 
         /// <summary>
@@ -65,14 +66,14 @@ namespace FluentConsole.Library
         /// <returns>The key entered while waiting.</returns>
         public static void WriteLineWait(this object value, ConsoleColor color, int lineBreaks = 0)
         {
-            Console.ForegroundColor = color;
-            Console.WriteLine(value);
-            Console.ResetColor();
+            ForegroundColor = color;
+            ConsoleWrapper.WriteLine(value);
+            ResetColor();
 
-            for (var i = 1; i < lineBreaks; i++)
-                Console.WriteLine();
+            for (var i = 0; i < lineBreaks; i++)
+                NewLine();
 
-            Console.ReadKey();
+            ReadKey();
         }
     }
 }
