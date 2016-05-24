@@ -38,7 +38,9 @@ namespace FluentConsole.Library
             for (var i = 0; i < lineBreaks; i++)
                 NewLine();
 
-            return ReadKey();
+            var key = ReadKey();
+            NewLine();
+            return key;
         }
 
         /// <summary>
@@ -64,7 +66,7 @@ namespace FluentConsole.Library
         /// <param name="color">The color of the text displayed.</param>
         /// <param name="lineBreaks">The number of *additional* line breaks to include after the specified value.</param>
         /// <returns>The key entered while waiting.</returns>
-        public static void WriteLineWait(this object value, ConsoleColor color, int lineBreaks = 0)
+        public static ConsoleKeyInfo WriteLineWait(this object value, ConsoleColor color, int lineBreaks = 0)
         {
             ForegroundColor = color;
             ConsoleWrapper.WriteLine(value);
@@ -73,7 +75,9 @@ namespace FluentConsole.Library
             for (var i = 0; i < lineBreaks; i++)
                 NewLine();
 
-            ReadKey();
+            var key = ReadKey();
+            NewLine();
+            return key;
         }
     }
 }
