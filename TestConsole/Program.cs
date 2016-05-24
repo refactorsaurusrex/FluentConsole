@@ -12,6 +12,10 @@ namespace TestConsole
     {
         static void Main(string[] args)
         {
+            var key = "Press any key to continue...".WriteLineWait();
+
+            $"You pressed the '{key.Key}' key!".WriteLine(1);
+
             FluentConsoleSettings.LineWrapOption = LineWrapOption.Manual;
             FluentConsoleSettings.LineWrapWidth = 25;
 
