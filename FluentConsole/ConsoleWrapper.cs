@@ -63,6 +63,12 @@ namespace FluentConsole.Library
             set { Console.ForegroundColor = value; }
         }
 
+        public static ConsoleColor BackgroundColor
+        {
+            get { return Console.BackgroundColor; }
+            set { Console.BackgroundColor = value; }
+        }
+
         public static void ResetColor()
         {
             Console.ResetColor();
