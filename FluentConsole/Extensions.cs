@@ -106,7 +106,7 @@ namespace FluentConsole.Library
         /// <param name="backcolor">The background color of the text displayed.</param>
         /// <param name="lineBreaks">The number of *additional* line breaks to include after the specified value.</param>
         /// <returns>The key entered while waiting.</returns>
-        public static ConsoleKeyInfo WriteLineWait(this object value, ConsoleColor color, ConsoleColr backcolor, int lineBreaks = 0)
+        public static ConsoleKeyInfo WriteLineWait(this object value, ConsoleColor color, ConsoleColor backcolor, int lineBreaks = 0)
         {
             ForegroundColor = color;
             BackgroundColor = backcolor;
