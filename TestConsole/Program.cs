@@ -19,15 +19,17 @@ namespace TestConsole
             FluentConsoleSettings.LineWrapOption = LineWrapOption.Manual;
             FluentConsoleSettings.LineWrapWidth = 25;
 
-            "This is a really long string, longer than the default width of the Console window buffer, followed by two line breaks. With any luck, this will be displayed as expected!".WriteLine(2);
+            const string longText = "This is a really long string, longer than the default width of the Console window buffer, followed by two line breaks. With any luck, this will be displayed as expected!";
+
+            longText.WriteLine(2);
 
             FluentConsoleSettings.LineWrapOption = LineWrapOption.Auto;
 
-            "This is a really long string, longer than the default width of the Console window buffer, followed by two line breaks. With any luck, this will be displayed as expected!".WriteLine(2);
+            longText.WriteLine(2);
 
             FluentConsoleSettings.LineWrapOption = LineWrapOption.Off;
 
-            "This is a really long string, longer than the default width of the Console window buffer, followed by two line breaks. With any luck, this will be displayed as expected!".WriteLine(2);
+            longText.WriteLine(2);
 
             FluentConsoleSettings.LineWrapOption = LineWrapOption.Auto;
 
