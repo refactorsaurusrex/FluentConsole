@@ -76,28 +76,18 @@ namespace FluentConsole.Library
 
         static string LineWrap(string text, int width)
         {
-            var builder = new StringBuilder();
-            var offset = 0;
-            var lineIndex = 0;
-
-            while (true)
+            var delimiter = FluentConsoleSettings.WordDelimiter;
+            var words = text.Split(delimiter);
+            var allLines = words.Skip(1).Aggregate(words.Take(1).ToList(), (lines, word) =>
             {
-                var skip = lineIndex++ * width - offset;
-                var line = text.Skip(skip).Take(width).ToList();
-                
-                if (line.Count < width)
-                {
-                    builder.Append(line.ToArray());
-                    break;
-                }
+                if (lines.Last().Length + word.Length >= width)
+                    lines.Add(word);
+                else
+                    lines[lines.Count - 1] += delimiter + word;
+                return lines;
+            });
 
-                var index = line.LastIndexOf(' ');
-                offset += line.Count - index - 1;
-                builder.Append(line.Take(index).ToArray());
-                builder.AppendLine();
-            }
-
-            return builder.ToString();
+            return string.Join(Environment.NewLine, allLines.ToArray());
         }
     }
 }
