@@ -30,13 +30,13 @@ namespace FluentConsole.Tests
         }
 
         [Test, Order(1)]
-        public void LineWrapSettingsShouldDefaultToAuto()
+        public void LineWrapSettings_Should_DefaultToAuto()
         {
             FluentConsoleSettings.LineWrapOption.ShouldBe(LineWrapOption.Auto);
         }
 
         [Test]
-        public void DefaultLineWrappingShouldResultInCorrectOutputString()
+        public void DefaultLineWrapping_Should_ResultInCorrectOutputString()
         {
             "This is a really long string, longer than the default width of the Console window buffer, followed by two line breaks. With any luck, this will be displayed as expected!".WriteLine();
             var result = output.ToString();
@@ -44,7 +44,7 @@ namespace FluentConsole.Tests
         }
 
         [Test]
-        public void ManualLineWrappingShouldResultInCorrectOutputString()
+        public void ManualLineWrapping_Should_ResultInCorrectOutputString()
         {
             FluentConsoleSettings.LineWrapOption = LineWrapOption.Manual;
             FluentConsoleSettings.LineWrapWidth = 25;
@@ -54,7 +54,7 @@ namespace FluentConsole.Tests
         }
 
         [Test]
-        public void LinesShouldNotBeWrappedWhenLineWrappingIsOff()
+        public void Lines_ShouldNotBe_WrappedWhenLineWrappingIsOff()
         {
             FluentConsoleSettings.LineWrapOption = LineWrapOption.Off;
             "This is a really long string, longer than the default width of the Console window buffer, followed by two line breaks. With any luck, this will be displayed as expected!".WriteLine();
@@ -67,13 +67,13 @@ namespace FluentConsole.Tests
         [TestCase(1)]
         [TestCase(0)]
         [TestCase(-1)]
-        public void WriteLineShouldIncludeCorrectNumberOfExtraLineBreaks(int breaks)
+        public void WriteLine_Should_IncludeCorrectNumberOfExtraLineBreaks(int breaks)
         {
             "This is a test string".WriteLine(breaks);
             var result = output.ToString();
 
             var expected = new StringBuilder($"This is a test string{n}");
-            for (int i = 0; i < breaks; i++)
+            for (var i = 0; i < breaks; i++)
                 expected.Append($"{n}");
 
             var expectedString = expected.ToString();
