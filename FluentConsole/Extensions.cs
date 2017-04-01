@@ -63,6 +63,16 @@ namespace FluentConsole.Library
         /// Writes the text representation of the specified object, followed by the current line terminator, to the standard output stream.
         /// </summary>
         /// <param name="value">The value to write.</param>
+        /// <param name="options">A WriteOptions object, indicating desired display options for text displayed.</param>
+        public static void WriteLine(this object value, WriteOptions options)
+        {
+            WriteLine(value, options.ForeColor, options.BackColor, options.LineBreaks);
+        }
+
+        /// <summary>
+        /// Writes the text representation of the specified object, followed by the current line terminator, to the standard output stream.
+        /// </summary>
+        /// <param name="value">The value to write.</param>
         /// <param name="lineBreaks">The number of *additional* line breaks to include after the specified value.</param>
         /// <returns>The key entered while waiting.</returns>
         public static ConsoleKeyInfo WriteLineWait(this object value, int lineBreaks = 0)
@@ -119,6 +129,17 @@ namespace FluentConsole.Library
             var key = ReadKey();
             NewLine();
             return key;
+        }
+
+        /// <summary>
+        /// Writes the text representation of the specified object, followed by the current line terminator, to the standard output stream.
+        /// </summary>
+        /// <param name="value">The value to write.</param>
+        /// <param name="options">A WriteOptions object, indicating desired display options for text displayed.</param>
+        /// <returns>The key entered while waiting.</returns>
+        public static ConsoleKeyInfo WriteLineWait(this object value, WriteOptions options)
+        {
+            return WriteLineWait(value, options.ForeColor, options.BackColor, options.LineBreaks);
         }
     }
 }
