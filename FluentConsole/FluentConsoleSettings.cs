@@ -19,5 +19,10 @@ namespace FluentConsole.Library
         /// </summary>
         public static int LineWrapWidth { get; set; } = ConsoleWrapper.BufferWidth;
 
+        /// <summary>
+        /// Gets or sets the delimter used when wrapping long lines of text. The default is a space character. Note: This value is ignored if 
+        /// 'LineWrapOption' is set to 'Off'.
+        /// </summary>
+        public static char WordDelimiter { get; set; } = ' ';
     }
 }
