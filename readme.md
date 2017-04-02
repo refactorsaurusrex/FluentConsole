@@ -29,9 +29,9 @@ Personally, I find it more sensible and less tedious to write it like this:
 Just add `using FluentConsole.Library;` to your namespace import statements and you're ready to go!
 
 ## Automatic Line Wrapping
-By default, FluentConsole will automatically wrap long lines of text to fit readably in the console window. This is done by strategically inserting line breaks in between words at end of each line. The default line length is the current width of the console window, but this can be changed to any width you desire or disabled completely, if you choose. Reference the `FluentConsoleSettings` type for more information.
+By default, FluentConsole will automatically wrap long lines of text to fit readably in the console window. This is done by strategically inserting line breaks in between words at end of each line. The default line length is the current width of the console window, but this can be changed to any width you desire or disabled completely, if you choose. Refer to the `FluentConsoleSettings` type for more information.
 
-**Taken from the ConsoleTest Project**
+**Taken from the 'FluentConsole.Demo' Project**
 
 1. Text wrapped with a manual width of 25.
 2. Text wrapped with automatic width of 80.
@@ -49,10 +49,8 @@ Updates to this repo are continuously packaged and [deployed to nuget](https://w
 
 To install from the Package Manager Console, type: `Install-Package FluentConsole.Library`
 
-## Got an idea for additional functionality?
-Create an issue and **let's discuss it!** At the time of this writing, there are only four methods in this library, but I fully expect more to be added over time as the need arises. I'm also totally open to outside suggestions and pull requests.
-
-Alternatively, you can fork this repo and do whatever strikes your fancy. :)
+## Contributing and Maintenance
+I only update this library on an **as-needed basis**. That means, if I happen to not be writing C# console applications for an extended period of time, I will probably also not be updating this library much. So if you find it useful - but lacking in some specific way - please consider contributing to the project yourself. I just ask that you first create an issue so we can discuss your idea *before* you begin making changes. Alternatively, you can fork this repo and do whatever strikes your fancy. :)
 
 ## Found a bug?
 Something not working as you'd expect? Create an issue.

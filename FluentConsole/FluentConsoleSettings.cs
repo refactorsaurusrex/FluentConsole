@@ -7,7 +7,9 @@ namespace FluentConsole.Library
     /// </summary>
     public class FluentConsoleSettings
     {
-        static FluentConsoleSettings()
+        private static int lineWrapWidth;
+
+        public FluentConsoleSettings()
         {
             LineWrapWidth = ConsoleWrapper.BufferWidth;
         }
@@ -15,13 +17,30 @@ namespace FluentConsole.Library
         /// <summary>
         /// Gets or sets a value indicating how long lines of text should be displayed in the console window.
         /// </summary>
-        public static LineWrapOption LineWrapOption { get; set; }
+        public static LineWrapOption LineWrapOption { get; set; } = LineWrapOption.Auto;
 
         /// <summary>
         /// Gets or sets the line width used for wrapping long lines of text. Note: This value is ignored
         /// unless 'LineWrapOption' is set to 'Manual'. The default width is the value of the 
         /// 'Console.BufferWidth' property.
         /// </summary>
-        public static int LineWrapWidth { get; set; }
+        public static int LineWrapWidth
+        {
+            get { return lineWrapWidth; }
+
+            set
+            {
+                if (value < 1)
+                    throw new InvalidOperationException("Value cannot be less than 1.");
+
+                lineWrapWidth = value;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the delimter used when wrapping long lines of text. The default is a space character. Note: This value is ignored if 
+        /// 'LineWrapOption' is set to 'Off'.
+        /// </summary>
+        public static char WordDelimiter { get; set; } = ' ';
     }
 }

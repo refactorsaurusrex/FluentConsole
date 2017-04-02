@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentConsole", "FluentConsole\FluentConsole.csproj", "{1581CF27-4610-4285-885F-DD51A7C80F09}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestConsole", "TestConsole\TestConsole.csproj", "{4755B593-92E1-4934-B1DD-6C9DF877809D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentConsole.Demo", "FluentConsole.Demo\FluentConsole.Demo.csproj", "{4755B593-92E1-4934-B1DD-6C9DF877809D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentConsole.Tests", "FluentConsole.Tests\FluentConsole.Tests.csproj", "{FAE85233-F5CF-487D-AD95-5407CEC3FF1E}"
 EndProject
