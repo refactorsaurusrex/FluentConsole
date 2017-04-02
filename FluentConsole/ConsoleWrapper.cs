@@ -80,7 +80,7 @@ namespace FluentConsole.Library
             var words = text.Split(delimiter);
             var allLines = words.Skip(1).Aggregate(words.Take(1).ToList(), (lines, word) =>
             {
-                if (lines.Last().Length + word.Length >= width)
+                if (lines.Last().Length + word.Length >= width - 1) // Minus 1, to allow for newline char
                     lines.Add(word);
                 else
                     lines[lines.Count - 1] += delimiter + word;

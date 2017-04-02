@@ -47,7 +47,7 @@ namespace FluentConsole.Tests
             FluentConsoleSettings.LineWrapWidth = 25;
             "This is a really long string, longer than the default width of the Console window buffer, followed by two line breaks. With any luck, this will be displayed as expected!".WriteLine();
             var result = output.ToString();
-            result.ShouldBe($"This is a really long{n}string, longer than the{n}default width of the{n}Console window buffer,{n}followed by two line{n}breaks. With any luck,{n}this will be displayed as{n}expected!{n}");
+            result.ShouldBe($"This is a really long{n}string, longer than the{n}default width of the{n}Console window buffer,{n}followed by two line{n}breaks. With any luck,{n}this will be displayed{n}as expected!{n}");
         }
 
         [Test]
