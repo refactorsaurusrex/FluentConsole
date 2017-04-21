@@ -13,14 +13,21 @@ namespace FluentConsole.Tests
     {
         public void Blah()
         {
-            "this is a test".WriteLine();
+            IFluentConsole fluentConsole = "this is a test".WriteLine();
+            IFluentConsole fluentConsoleIntercepter = fluentConsole.Intercept();
 
-            IFluentConsoleInput waitAnyResult = "this is a test".WriteLine().WaitAny();
+            IFluentConsoleReader reader1 = fluentConsoleIntercepter.WaitAny();
+            string reader1Text = reader1.Text;
 
-            IFluentConsoleInput intercept = "this is a test".WriteLine().WaitSpecific(ConsoleKey.A, ConsoleKey.Escape).Intercept();
+            IFluentConsoleReader reader = fluentConsole.WaitAny();
+            string readerText = reader.Text;
+
+            IFluentConsoleReader waitAnyResult = "this is a test".WriteLine().WaitAny();
+
+            IFluentConsoleReader intercept = "this is a test".WriteLine().WaitFor(ConsoleKey.A, ConsoleKey.Escape);
             string text = intercept.Text;
 
-            IFluentConsoleInput waitHandle = "this is a test".WriteLine().WaitSpecific(ConsoleKey.A, ConsoleKey.Escape);
+            IFluentConsoleReader waitHandle = "this is a test".WriteLine().WaitFor(ConsoleKey.A, ConsoleKey.Escape);
             string text1 = waitHandle.Text;
         }
     }

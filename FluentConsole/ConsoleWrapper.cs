@@ -52,9 +52,9 @@ namespace FluentConsole.Library
             set { Console.BufferWidth = value; }
         }
 
-        public static ConsoleKeyInfo ReadKey()
+        public static ConsoleKeyInfo ReadKey(bool intercept = false)
         {
-            return Console.ReadKey();
+            return Console.ReadKey(intercept);
         }
 
         public static ConsoleColor ForegroundColor
