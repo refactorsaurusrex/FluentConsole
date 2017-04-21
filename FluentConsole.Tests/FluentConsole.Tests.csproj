@@ -50,6 +50,7 @@
   <ItemGroup>
     <Compile Include="ExtensionsTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="V2ExtensionsTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FluentConsole\FluentConsole.csproj">
