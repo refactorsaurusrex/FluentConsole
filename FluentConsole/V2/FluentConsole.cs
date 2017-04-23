@@ -7,15 +7,28 @@ namespace FluentConsole.Library.V2
 {
     class FluentConsole : IFluentConsole
     {
-        bool intercept;
+        static readonly Lazy<FluentConsole> instance = new Lazy<FluentConsole>(() => new FluentConsole());
 
-        public IFluentConsoleReader WaitAny()
+        FluentConsole() { }
+
+        public static FluentConsole Instance => instance.Value;
+
+        public string ReadUntilAny(bool intercept = false)
         {
-            var keyInfo = ReadKey();
-            return new FluentConsoleReader(keyInfo.Key.ToString());
+            return ReadKey(intercept).ToString();
         }
 
-        public IFluentConsoleReader WaitFor(params ConsoleKey[] keys)
+        public string ReadUntil(params ConsoleKey[] keys)
+        {
+            return ReadUntilCore(false, keys);
+        }
+
+        public string ReadUntil(bool intercept, params ConsoleKey[] keys)
+        {
+            return ReadUntilCore(intercept, keys);
+        }
+
+        string ReadUntilCore(bool intercept, params ConsoleKey[] keys)
         {
             var builder = new StringBuilder();
 
@@ -29,13 +42,7 @@ namespace FluentConsole.Library.V2
                 builder.Append(key);
             }
 
-            return new FluentConsoleReader(builder.ToString());
-        }
-
-        public IFluentConsole Intercept()
-        {
-            intercept = true;
-            return this;
+            return builder.ToString();
         }
     }
 }

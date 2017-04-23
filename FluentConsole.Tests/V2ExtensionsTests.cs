@@ -14,21 +14,14 @@ namespace FluentConsole.Tests
         public void Blah()
         {
             IFluentConsole fluentConsole = "this is a test".WriteLine();
-            IFluentConsole fluentConsoleIntercepter = fluentConsole.Intercept();
 
-            IFluentConsoleReader reader1 = fluentConsoleIntercepter.WaitAny();
-            string reader1Text = reader1.Text;
+            string reader = fluentConsole.ReadUntilAny();
 
-            IFluentConsoleReader reader = fluentConsole.WaitAny();
-            string readerText = reader.Text;
+            string waitAnyResult = "this is a test".WriteLine().ReadUntilAny();
 
-            IFluentConsoleReader waitAnyResult = "this is a test".WriteLine().WaitAny();
+            string intercept = "this is a test".WriteLine().ReadUntil(ConsoleKey.A, ConsoleKey.Escape);
 
-            IFluentConsoleReader intercept = "this is a test".WriteLine().WaitFor(ConsoleKey.A, ConsoleKey.Escape);
-            string text = intercept.Text;
-
-            IFluentConsoleReader waitHandle = "this is a test".WriteLine().WaitFor(ConsoleKey.A, ConsoleKey.Escape);
-            string text1 = waitHandle.Text;
+            string waitHandle = "this is a test".WriteLine().ReadUntil(ConsoleKey.A, ConsoleKey.Escape);
         }
     }
 }

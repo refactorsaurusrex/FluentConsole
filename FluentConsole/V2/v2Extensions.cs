@@ -18,22 +18,22 @@ namespace FluentConsole.Library.V2
             for (var i = 0; i < lineBreaks; i++)
                 NewLine();
 
-            return new FluentConsole();
+            return FluentConsole.Instance;
         }
 
         public static IFluentConsole WriteLine(this object value, ConsoleColor foreColor, int lineBreaks = 0)
         {
-            return new FluentConsole();
+            return FluentConsole.Instance;
         }
 
         public static IFluentConsole WriteLine(this object value, ConsoleColor foreColor, ConsoleColor backColor, int lineBreaks = 0)
         {
-            return new FluentConsole();
+            return FluentConsole.Instance;
         }
 
         public static IFluentConsole WriteLine(this object value, WriteOptions options)
         {
-            return new FluentConsole();
+            return FluentConsole.Instance;
         }
     }
 }
