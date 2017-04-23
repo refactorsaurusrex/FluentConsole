@@ -48,13 +48,8 @@
     <Compile Include="LineWrapOption.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ConsoleWrapper.cs" />
-    <Compile Include="V2\FluentConsoleIntercepter.cs" />
     <Compile Include="V2\FluentConsoleReader.cs" />
-    <Compile Include="V2\FluentConsole.cs" />
-    <Compile Include="V2\IBlockingFluentConsole.cs" />
-    <Compile Include="V2\IFluentConsoleIntercepter.cs" />
     <Compile Include="V2\IFluentConsoleReader.cs" />
-    <Compile Include="V2\IFluentConsole.cs" />
     <Compile Include="V2\v2Extensions.cs" />
     <Compile Include="WriteOptions.cs" />
   </ItemGroup>

@@ -11,29 +11,29 @@ namespace FluentConsole.Library.V2
     {
         // Todo: let user set up default formatting via FluentConsoleSettings
 
-        public static IFluentConsole WriteLine(this object value, int lineBreaks = 0)
+        public static IFluentConsoleReader WriteLine(this object value, int lineBreaks = 0)
         {
             ConsoleWrapper.WriteLine(value);
 
             for (var i = 0; i < lineBreaks; i++)
                 NewLine();
 
-            return FluentConsole.Instance;
+            return FluentConsoleReader.Instance;
         }
 
-        public static IFluentConsole WriteLine(this object value, ConsoleColor foreColor, int lineBreaks = 0)
+        public static IFluentConsoleReader WriteLine(this object value, ConsoleColor foreColor, int lineBreaks = 0)
         {
-            return FluentConsole.Instance;
+            return FluentConsoleReader.Instance;
         }
 
-        public static IFluentConsole WriteLine(this object value, ConsoleColor foreColor, ConsoleColor backColor, int lineBreaks = 0)
+        public static IFluentConsoleReader WriteLine(this object value, ConsoleColor foreColor, ConsoleColor backColor, int lineBreaks = 0)
         {
-            return FluentConsole.Instance;
+            return FluentConsoleReader.Instance;
         }
 
-        public static IFluentConsole WriteLine(this object value, WriteOptions options)
+        public static IFluentConsoleReader WriteLine(this object value, WriteOptions options)
         {
-            return FluentConsole.Instance;
+            return FluentConsoleReader.Instance;
         }
     }
 }

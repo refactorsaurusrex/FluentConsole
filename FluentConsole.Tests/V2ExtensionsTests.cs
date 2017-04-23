@@ -13,9 +13,9 @@ namespace FluentConsole.Tests
     {
         public void Blah()
         {
-            IFluentConsole fluentConsole = "this is a test".WriteLine();
+            IFluentConsoleReader fluentConsoleReader = "this is a test".WriteLine();
 
-            string reader = fluentConsole.ReadUntilAny();
+            string reader = fluentConsoleReader.ReadUntilAny();
 
             string waitAnyResult = "this is a test".WriteLine().ReadUntilAny();
 
