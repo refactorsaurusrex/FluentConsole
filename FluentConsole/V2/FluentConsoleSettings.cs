@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace FluentConsole.Library
+namespace FluentConsole.Library.V2
 {
     /// <summary>
     /// Optionial configuration for FluentConsole

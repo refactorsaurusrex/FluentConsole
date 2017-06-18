@@ -1,7 +1,6 @@
 using System;
 using System.Linq;
 using System.Text;
-using static FluentConsole.Library.ConsoleWrapper;
 
 namespace FluentConsole.Library.V2
 {
@@ -15,7 +14,7 @@ namespace FluentConsole.Library.V2
 
         public string ReadUntilAny(bool intercept = false)
         {
-            return ReadKey(intercept).ToString();
+            return ConsoleWrapper.ReadKey(intercept).ToString();
         }
 
         public string ReadUntil(params ConsoleKey[] keys)
@@ -34,7 +33,7 @@ namespace FluentConsole.Library.V2
 
             while (true)
             {
-                var key = ReadKey(intercept).Key;
+                var key = ConsoleWrapper.ReadKey(intercept).Key;
 
                 if (keys.Contains(key))
                     break;

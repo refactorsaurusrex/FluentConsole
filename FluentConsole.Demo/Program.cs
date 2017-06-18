@@ -11,8 +11,20 @@ namespace FluentConsole.Demo
     {
         static void Main(string[] args)
         {
+ 
+        }
+
+        public void RunV2Demo()
+        {
+            
+        }
+
+        public void RunV1Demo()
+        {
+#pragma warning disable 612
             var message = new WriteOptions { ForeColor = ConsoleColor.Yellow, LineBreaks = 1 };
             "".WriteLine();
+
             "Welcome to FluentConsole!".WriteLine(ConsoleColor.Red);
             "=========================".WriteLine(ConsoleColor.Red, 1);
 
@@ -51,6 +63,7 @@ namespace FluentConsole.Demo
 
             "That's all for now!".WriteLine(message);
             "I only update this library on an as-needed basis. That means, if I happen to not be writing console apps for an extended period, I probably will also not be updating this library much. So if you find it useful - but lacking in some specific way - take a look at this repo's readme on GitHub for information on contributing!".WriteLineWait(ConsoleColor.Cyan);
+#pragma warning restore 612
         }
     }
 }

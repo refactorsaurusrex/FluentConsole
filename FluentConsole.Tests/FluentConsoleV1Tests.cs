@@ -7,11 +7,12 @@ using System.Threading.Tasks;
 using FluentConsole.Library;
 using NUnit.Framework;
 using Shouldly;
+#pragma warning disable 612
 
 namespace FluentConsole.Tests
 {
     [TestFixture]
-    public class ExtensionsTests
+    public class FluentConsoleV1Tests
     {
         StringWriter output;
         readonly string n = Environment.NewLine;

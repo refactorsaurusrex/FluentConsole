@@ -49,8 +49,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ConsoleWrapper.cs" />
     <Compile Include="V2\FluentConsoleReader.cs" />
+    <Compile Include="V2\FluentConsoleSettings.cs" />
     <Compile Include="V2\IFluentConsoleReader.cs" />
-    <Compile Include="V2\v2Extensions.cs" />
+    <Compile Include="V2\FluentConsoleExtensions.cs" />
+    <Compile Include="V2\LineWrapOption.cs" />
     <Compile Include="WriteOptions.cs" />
   </ItemGroup>
   <ItemGroup />
