@@ -3,7 +3,7 @@
 namespace FluentConsole.Library
 {
     /// <summary>
-    /// Optionial configuration for FluentConsole
+    /// Optional configuration for FluentConsole
     /// </summary>
     public class FluentConsoleSettings
     {
@@ -38,7 +38,7 @@ namespace FluentConsole.Library
         }
 
         /// <summary>
-        /// Gets or sets the delimter used when wrapping long lines of text. The default is a space character. Note: This value is ignored if 
+        /// Gets or sets the delimiter used when wrapping long lines of text. The default is a space character. Note: This value is ignored if 
         /// 'LineWrapOption' is set to 'Off'.
         /// </summary>
         public static char WordDelimiter { get; set; } = ' ';
