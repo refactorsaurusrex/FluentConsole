@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using FluentConsole.Library;
 
-namespace FluentConsole.Demo
+namespace FluentConsole.NetFramework.Demo
 {
     class Program
     {
@@ -13,8 +9,8 @@ namespace FluentConsole.Demo
         {
             var message = new WriteOptions { ForeColor = ConsoleColor.Yellow, LineBreaks = 1 };
             "".WriteLine();
-            "Welcome to FluentConsole!".WriteLine(ConsoleColor.Red);
-            "=========================".WriteLine(ConsoleColor.Red, 1);
+            "Welcome to the demo of FluentConsole running in a .Net Framework console app!".WriteLine(ConsoleColor.Red);
+            "=============================================================================".WriteLine(ConsoleColor.Red, 1);
 
             var key = "This is an example of 'WriteLineWait'. It's a wrapper around 'Console.ReadKey'. Press any key to continue...".WriteLineWait(message);
 
