@@ -1,28 +1,29 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static System.Math;
 
 namespace FluentConsole.Library
 {
-    class ConsoleWrapper
+    internal class ConsoleWrapper
     {
         public static void NewLine()
         {
             Console.WriteLine();
         }
 
-        public static void WriteLine(object value)
+        public static void WriteLine(object value, IFluentConsoleSettings settings)
         {
-            if (FluentConsoleSettings.LineWrapOption == LineWrapOption.Off)
+            if (settings.LineWrapOption == LineWrapOption.Off)
             {
                 Console.WriteLine(value);
                 return;
             }
 
-            var bufferWidth = FluentConsoleSettings.LineWrapOption == LineWrapOption.Auto ? BufferWidth : FluentConsoleSettings.LineWrapWidth;
+            var bufferWidth = BufferWidth;
+            if (settings.LineWrapOption == LineWrapOption.Manual && settings.LineWrapWidth.HasValue)
+            {
+                bufferWidth = settings.LineWrapWidth.Value;
+            }
+
             var valueText = value.ToString();
 
             if (valueText.Length <= bufferWidth)
@@ -31,7 +32,7 @@ namespace FluentConsole.Library
                 return;
             }
 
-            var wrappedText = LineWrap(valueText, bufferWidth);
+            var wrappedText = LineWrap(valueText, bufferWidth, settings);
             Console.WriteLine(wrappedText);
         }
 
@@ -49,7 +50,7 @@ namespace FluentConsole.Library
                 }
             }
 
-            set { Console.BufferWidth = value; }
+            set => Console.BufferWidth = value;
         }
 
         public static ConsoleKeyInfo ReadKey()
@@ -59,14 +60,14 @@ namespace FluentConsole.Library
 
         public static ConsoleColor ForegroundColor
         {
-            get { return Console.ForegroundColor; }
-            set { Console.ForegroundColor = value; }
+            get => Console.ForegroundColor;
+            set => Console.ForegroundColor = value;
         }
 
         public static ConsoleColor BackgroundColor
         {
-            get { return Console.BackgroundColor; }
-            set { Console.BackgroundColor = value; }
+            get => Console.BackgroundColor;
+            set => Console.BackgroundColor = value;
         }
 
         public static void ResetColor()
@@ -74,9 +75,9 @@ namespace FluentConsole.Library
             Console.ResetColor();
         }
 
-        static string LineWrap(string text, int width)
+        private static string LineWrap(string text, int width, IFluentConsoleSettings settings)
         {
-            var delimiter = FluentConsoleSettings.WordDelimiter;
+            var delimiter = settings.WordDelimiter;
             var words = text.Split(delimiter);
             var allLines = words.Skip(1).Aggregate(words.Take(1).ToList(), (lines, word) =>
             {

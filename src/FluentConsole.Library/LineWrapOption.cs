@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace FluentConsole.Library
+﻿namespace FluentConsole.Library
 {
     /// <summary>
     /// Values indicating how long lines of text should be displayed in the console window.
