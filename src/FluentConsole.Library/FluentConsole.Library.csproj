@@ -2,6 +2,16 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Version>2.0.0</Version>
+    <Authors>Nick Spreitzer</Authors>
+    <Company />
+    <Description>Fluent Console Library is a single class of extension methods that simplify writing messages to the console window.</Description>
+    <PackageLicenseUrl>https://github.com/refactorsaurusrex/FluentConsole/raw/master/license.md</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/refactorsaurusrex/FluentConsole</PackageProjectUrl>
+    <PackageIconUrl>https://github.com/refactorsaurusrex/FluentConsole/raw/master/Images/FluentConsole.png</PackageIconUrl>
+    <RepositoryUrl>https://github.com/refactorsaurusrex/FluentConsole</RepositoryUrl>
+    <PackageTags>C# console</PackageTags>
   </PropertyGroup>
 
 </Project>
