@@ -5,6 +5,7 @@
 Fluent Console Library is a single class of extension methods that simplify writing messages to the console window.
 
 ## Usage
+
 We're used to writing console messages like this:
 
 ```csharp
@@ -29,31 +30,29 @@ Personally, I find it more sensible and less tedious to write it like this:
 Just add `using FluentConsole.Library;` to your namespace import statements and you're ready to go!
 
 ## Automatic Line Wrapping
+
 By default, FluentConsole will automatically wrap long lines of text to fit readably in the console window. This is done by strategically inserting line breaks in between words at end of each line. The default line length is the current width of the console window, but this can be changed to any width you desire or disabled completely, if you choose. Refer to the `FluentConsoleSettings` type for more information.
 
 **Taken from the 'FluentConsole.Demo' Project**
 
-1. Text wrapped with a manual width of 25.
-2. Text wrapped with automatic width of 80.
-3. Text with line wrapping turned off.
-4. Normal line of text.
-5. Normal line of text, with green font.
-6. Normal line of text, with red font.
-
-![Line Wrapping](https://raw.githubusercontent.com/refactorsaurusrex/FluentConsole/master/Images/LineWrapping.png)
+![Demo](/Images/FluentConsoleDemo.gif)
 
 ## Installation
+
 Updates to this repo are continuously packaged and [deployed to nuget](https://www.nuget.org/packages/FluentConsole.Library/), so whatever code you see here is already available in the wild. Just open the Nuget package manager in Visual Studio and search for 'fluentconsole'. **Note:** There is another, similarly named package available, so make sure you're installing the one you want.
 
-![Nuget Package Manager Search Result](https://raw.githubusercontent.com/refactorsaurusrex/FluentConsole/master/Images/NuGetPackageManagerSearchResult.png)
+![Nuget Package Manager Search Result](/Images/NuGetPackageManagerSearchResult.png)
 
-To install from the Package Manager Console, type: `Install-Package FluentConsole.Library`
+To install from the Package Manager Console, run: `Install-Package FluentConsole.Library`
 
-## Contributing and Maintenance
-I only update this library on an **as-needed basis**. That means, if I happen to not be writing C# console applications for an extended period of time, I will probably also not be updating this library much. So if you find it useful - but lacking in some specific way - please consider contributing to the project yourself. I just ask that you first create an issue so we can discuss your idea *before* you begin making changes. Alternatively, you can fork this repo and do whatever strikes your fancy. :)
+## Contributions and Maintenance
+
+I only update this library on an **as-needed basis**. That means, if I happen to not be writing C# console applications for an extended period of time, I will probably also not be updating this library much. So if you find it useful - but lacking in some specific way - please consider contributing to the project yourself. I just ask that you first review the [contributing guidelines](/CONTRIBUTING.MD) before you begin making changes. Alternatively, you can fork this repo and do whatever strikes your fancy. :)
 
 ## Found a bug?
+
 Something not working as you'd expect? Create an issue.
 
 ## License
-[The MIT License (MIT)](https://github.com/refactorsaurusrex/FluentConsole/blob/MinorUpdates/license.md)
+
+[The MIT License (MIT)](/license.md)
